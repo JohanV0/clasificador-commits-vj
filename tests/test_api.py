@@ -26,3 +26,15 @@ def test_crear_commit():
     assert data["mensaje"] == payload["mensaje"]
     assert data["categoria"] == payload["categoria"]
 
+def test_app_ia_no_puede_borrar():
+    """Prueba de seguridad: el rol app_ia no puede borrar commits."""
+    import psycopg2
+    conn = psycopg2.connect(
+        "postgresql://app_ia:app_ia_pass@localhost:5432/clasificador_db"
+    )
+    conn.autocommit = True
+    cur = conn.cursor()
+    with pytest.raises(psycopg2.errors.InsufficientPrivilege):
+        cur.execute("DELETE FROM commits")
+    cur.close()
+    conn.close()
