@@ -219,3 +219,5 @@ __marimo__/
 .env
 __pycache__/
 *.pyc
+backups/
+backups/
