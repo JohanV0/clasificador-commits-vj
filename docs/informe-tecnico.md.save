@@ -1,0 +1,15 @@
+# Informe técnico
+
+## Ficha de caracterización del modelo
+
+| Dato | Cómo obtenerlo | Valor |
+|------|----------------|-------|
+| Perfil de hardware | Sección 2 de la guía | C |
+| RAM total del equipo | free -h | 5,6 GiB |
+| Modelo y etiqueta | ollama list | gemma3:270m |
+| Tamaño en disco | ollama list | 291 MB |
+| Latencia de 5 ejecuciones (ms) | time curl ... cinco veces | 1437, 1419, 1471, 1462, 1454 |
+| Latencia promedio | Promedio de las cinco | 1448,6 ms |
+| RAM usada durante la inferencia | free -h mientras responde | X,X GiB |
+| Calidad percibida (1 a 5) | Su criterio, con una frase que lo justifique | 2 - Confunde comandos de terminal con texto y alucina explicaciones, pero responde en español |
+
